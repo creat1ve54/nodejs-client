@@ -1,7 +1,7 @@
-[build]
+<!-- [build]
     publish = "."
 
 [[redirects]]
     from = "/"
     to = "/adminpanel"
-    status = 200
+    status = 200 -->
