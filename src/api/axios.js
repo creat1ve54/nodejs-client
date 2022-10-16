@@ -4,7 +4,6 @@ export const instance = axios.create({
     baseURL: 'https://nodejs-server-production.up.railway.app/api',
 })
 
-
 export const postAPI = {
     create(params) {
         return instance.post('/posts', params)
