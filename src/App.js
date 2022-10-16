@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/adminpanel' element={<AdminPanelPage />} />
-        <Route path='/edit/:id' element={<EditPage />} />
-        <Route path='/post/:id' element={<PostItem />} />
+        <Route path='https://lucent-cupcake-286300.netlify.app' element={<MainPage />} />
+        <Route path='https://lucent-cupcake-286300.netlify.app/adminpanel' element={<AdminPanelPage />} />
+        <Route path='https://lucent-cupcake-286300.netlify.app/edit/:id' element={<EditPage />} />
+        <Route path='https://lucent-cupcake-286300.netlify.app/post/:id' element={<PostItem />} />
       </Routes>
     </>
   );

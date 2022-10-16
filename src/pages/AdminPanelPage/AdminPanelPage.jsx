@@ -47,7 +47,6 @@ const AdminPanelPage = (props) => {
 
   const paginate = pageNumber => setPage(pageNumber)
 
-
   const submitHandler = () => {
     try {
       const data = new FormData()
