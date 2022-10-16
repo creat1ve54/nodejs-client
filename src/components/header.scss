@@ -1,0 +1,45 @@
+.header {
+    padding: 20px 0;
+    background-color: rgb(212, 211, 211);
+
+    &__title {
+        margin: 0;
+        font-size: 29px;
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+
+    &__desc {
+        font-size: 10px;
+    }
+
+    &__modification {
+        color: red;
+    }
+
+    &__logo {
+        border: inherit;
+        border-radius: inherit;
+        margin-bottom: inherit;
+        overflow: inherit;
+    }
+
+    a {
+        color: black;
+    }
+}
+
+@media (max-width: 550px) {
+    .header {
+        &__title {
+            font-size: 20px;
+            font-weight: 900;
+        }
+    
+        &__desc {
+            font-size: 7px;
+        }
+    }
+}

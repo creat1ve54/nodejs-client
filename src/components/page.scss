@@ -1,0 +1,20 @@
+.page {
+    padding: 20px 0px;
+    &__link {
+        padding: 3px;
+        border: 2px solid gray;
+        color: black;
+        border-radius: 20px;
+
+        &--active {
+            font-size: 18px;
+            padding: 5px;
+            background-color: bisque;
+        }
+    }
+
+    &__link:not(:last-child) {
+        margin-right: 5px;
+    }
+
+}
