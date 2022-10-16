@@ -47,10 +47,10 @@ const PostItem = () => {
                     <div className='publication__file'>
                         {expansion === 'jpg' || expansion === 'png' ? (
                             <div className='postItem__image'>
-                                <img className='postItem__img' src={`https://nodejs-server-production.up.railway.app/${file}`} alt='Img' />
+                                <img className='postItem__img' src={`https://nodejs-server-production.up.railway.app/app/static/${file}`} alt='Img' />
                             </div>
                         ) :
-                            <ReactPlayer url={`https://nodejs-server-production.up.railway.app/${file}`} width="100%" height="100%" controls={true} />
+                            <ReactPlayer url={`https://nodejs-server-production.up.railway.app/app/static/${file}`} width="100%" height="100%" controls={true} />
                         }
                     </div>
                 }

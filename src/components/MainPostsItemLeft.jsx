@@ -29,10 +29,10 @@ const MainPostsItemLeft = ({ post }) => {
                 }>
                     {expansion === 'jpg' || expansion === 'png' ? (
                         <div className='MainPostsItemLeft__image'>
-                            <img className='MainPostsItemLeft__img' src={`http://localhost:6080/${post.fileUrl}`} alt='Img' />
+                            <img className='MainPostsItemLeft__img' src={`https://nodejs-server-production.up.railway.app/app/static/${post.fileUrl}`} alt='Img' />
                         </div>
                     ) :
-                        <ReactPlayer url={`http://localhost:6080/${post.fileUrl}`} width="100%" height="100%" controls={true} />
+                        <ReactPlayer url={`https://nodejs-server-production.up.railway.app/app/static/${post.fileUrl}`} width="100%" height="100%" controls={true} />
                     }
                 </div>
                 }
