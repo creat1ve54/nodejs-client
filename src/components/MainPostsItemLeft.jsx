@@ -25,14 +25,14 @@ const MainPostsItemLeft = ({ post }) => {
     return (
         <div className='MainPostsItemLeft'>
             <Link to={`/post/${post.id}`} className='MainPostsItemLeft__link'>
-                { post.fileUrl && <div className={post.fileUrl ? 'MainPostsItemLeft__image--visible' : 'MainPostsItemLeft__image--invisible'
+                {post.fileUrl && <div className={post.fileUrl ? 'MainPostsItemLeft__image--visible' : 'MainPostsItemLeft__image--invisible'
                 }>
                     {expansion === 'jpg' || expansion === 'png' ? (
                         <div className='MainPostsItemLeft__image'>
-                            <img className='MainPostsItemLeft__img' src={`https://nodejs-server-production.up.railway.app/app/static/${post.fileUrl}`} alt='Img' />
+                            <img className='MainPostsItemLeft__img' src={`https://nodejs-server-production.up.railway.app/${post.fileUrl}`} alt='Img' />
                         </div>
                     ) :
-                        <ReactPlayer url={`https://nodejs-server-production.up.railway.app/app/static/${post.fileUrl}`} width="100%" height="100%" controls={true} />
+                        <ReactPlayer url={`https://nodejs-server-production.up.railway.app/${post.fileUrl}`} width="100%" height="100%" controls={true} />
                     }
                 </div>
                 }
