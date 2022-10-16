@@ -4,9 +4,16 @@ import MainPage from './pages/mainPage/MainPage';
 import AdminPanelPage from './pages/AdminPanelPage/AdminPanelPage';
 import PostItem from './components/PostItem';
 import EditPage from './pages/AdminPanelPage/EditPage';
+import { useHistory } from "react-router-dom";
+import { useEffect } from 'react';
 
 function App() {
-  window.location.replace("https://lucent-cupcake-286300.netlify.app/adminpanel");
+  let history = useHistory();
+
+  useEffect(() => {
+    history.push("/adminpanel");
+  }, [history])
+
   return (
     <>
       <Routes>

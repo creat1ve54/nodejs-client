@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className='header'>
             <div className='container'>
-                <Link to={'https://lucent-cupcake-286300.netlify.app//adminpanel'} className='header__logo'>
+                <Link to={'/'} className='header__logo'>
                     <h1 className='header__title'>
                         <span className='header__desc'>информационно-аналитический портал</span>
                         <div>
