@@ -9,7 +9,6 @@ import PostsItem from '../../components/PostsItem'
 
 import SimpleMDE from "react-simplemde-editor";
 import Page from '../../components/Page';
-import { useNavigate } from 'react-router-dom';
 
 
 
@@ -23,7 +22,6 @@ const AdminPanelPageContainer = (props) => {
 
 
 const AdminPanelPage = (props) => {
-  
   const { getAllPosts, posts } = props
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
@@ -31,10 +29,6 @@ const AdminPanelPage = (props) => {
   const [link, setLink] = useState('')
   const [expansion, setExpansion] = useState('')
   const inputFileRef = useRef(null)
-  useEffect(() => {
-    getAllPosts()
-    setTotalUserCount(posts?.length)
-  }, [getAllPosts, posts?.length])
 
 
 
@@ -42,7 +36,7 @@ const AdminPanelPage = (props) => {
   const [limit, setLimit] = useState(10);
   const [totalUserCount, setTotalUserCount] = useState(0);
 
-  const navigate= useNavigate()
+
 
   const lastIndex = page * limit
   const firstIndex = lastIndex - limit
@@ -61,7 +55,9 @@ const AdminPanelPage = (props) => {
       data.append('file', file)
       data.append('expansion', expansion)
       props.createPost(data)
-      navigate('/adminpanel')
+      setTimeout(function () {
+        window.location.reload();
+      }, 1000)
     } catch (error) {
       console.log(error)
     }
@@ -107,7 +103,10 @@ const AdminPanelPage = (props) => {
   }, []);
 
 
-
+  useEffect(() => {
+    getAllPosts()
+    setTotalUserCount(posts?.length)
+  }, [getAllPosts, posts?.length])
 
 
   return (
