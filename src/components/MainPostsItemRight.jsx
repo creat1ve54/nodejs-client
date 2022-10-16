@@ -11,7 +11,10 @@ const MainPostsItemRight = ({ post }) => {
 
     useEffect(() => {
         setExpansion(post?.fileUrl?.split('.').pop())
-    }, [post.fileUrl])
+        console.log(post?.fileUrl)
+
+    }, [post?.fileUrl])
+
     let data = moment(post.createdAt).format('LL')
     let time = moment(post.createdAt).format('LT');
 
@@ -30,10 +33,10 @@ const MainPostsItemRight = ({ post }) => {
                     }>
                         {expansion === 'jpg' || expansion === 'png' ? (
                             <div className='MainPostsItemRight__image'>
-                                <img className='MainPostsItemRight__img' src={`https://nodejs-server-production.up.railway.app/${post.fileUrl}`} alt='Img' />
+                                <img className='MainPostsItemRight__img' src={`https://nodejs-server-production.up.railway.app/${post?.fileUrl}`} alt='Img' />
                             </div>
                         ) :
-                            <ReactPlayer url={`https://nodejs-server-production.up.railway.app/${post.fileUrl}`} width="100%" height="300px" controls={true} />
+                            <ReactPlayer url={`https://nodejs-server-production.up.railway.app/${post?.fileUrl}`} width="100%" height="300px" controls={true} />
                         }
                     </div>
                 }
