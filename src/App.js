@@ -8,7 +8,6 @@ import { useEffect } from 'react';
 
 
 function App() {
-  console.log(window.location.pathname)
   if (window.location.pathname === '/adminpanel') {
     <Link to={'/adminpanel'}></Link>
   }
