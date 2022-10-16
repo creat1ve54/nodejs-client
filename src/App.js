@@ -1,18 +1,17 @@
 import './App.scss';
-import { Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 import MainPage from './pages/mainPage/MainPage';
 import AdminPanelPage from './pages/AdminPanelPage/AdminPanelPage';
 import PostItem from './components/PostItem';
 import EditPage from './pages/AdminPanelPage/EditPage';
-import { useHistory } from "react-router-dom";
 import { useEffect } from 'react';
 
-function App() {
-  let history = useHistory();
 
-  useEffect(() => {
-    history.push("/adminpanel");
-  }, [history])
+function App() {
+  console.log(window.location.pathname)
+  if (window.location.pathname === '/adminpanel') {
+    <Link to={'/adminpanel'}></Link>
+  }
 
   return (
     <>

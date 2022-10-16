@@ -6,7 +6,7 @@ import { getAllPosts } from '../../redux/post-reducer'
 import MainPostsItemLeft from '../../components/MainPostsItemLeft'
 import MainPostsItemRight from '../../components/MainPostsItemRight'
 import Page from '../../components/Page'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 
 const MainPageContainer = (props) => {
