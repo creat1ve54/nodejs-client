@@ -8,9 +8,12 @@ import { useEffect } from 'react';
 
 
 function App() {
-  if (window.location.pathname === '/adminpanel') {
-    <Link to={'/adminpanel'}></Link>
-  }
+  const navigate = useNavigate()
+  useEffect(() => {
+
+    navigate('/adminpanel')
+  }, [])
+
 
   return (
     <>
