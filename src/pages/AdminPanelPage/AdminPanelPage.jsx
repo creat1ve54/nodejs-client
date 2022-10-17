@@ -110,46 +110,48 @@ const AdminPanelPage = (props) => {
       <h1 className='admin__title'>Панель добавления постов</h1>
       <div className='container admin__container'>
         <div className='admin__left'>
-          <h2 className='admin__caption'>Добавить пост</h2>
-          <form className='admin__post post' onSubmit={e => e.preventDefault()}>
-            <label className='post__label'>
-              <button onClick={() => inputFileRef.current.click()} className='post__btn post__btn--input'>Добавить превью</button>
-              <input hidden ref={inputFileRef} type='file' multiple className='post__input post__input--file' onChange={handleFileUpload} />
-            </label>
-            {expansion === 'jpg' || expansion === 'png' ? (
-              <div className='post__image'>
-                <img className='post__img' src={link} alt='Img' />
-              </div>
-            ) :
-              <ReactPlayer url={link} width="100%" height="100%" style={{ marginTop: '10px', marginBottom: '10px' }} controls={true} />
-            }
-            <label className='post__title'>
-              Заголовок поста:
-              <div className='post__input post__input--text'>
-                <input type='text' placeholder='Заголовок' value={title} onChange={e => setTitle(e.target.value)} />
-              </div>
-            </label>
-            <label className='post__title'>
-              Текст поста:
-              <div className='post__input post__input--text'>
-                <SimpleMDE value={text} onChange={onChange} className='post__editor' options={options} />
-              </div>
-            </label>
-            <div className='post__button'>
-              <div>{loading}</div>
-              {
-                loading ? <div class="loader">
+          {
+            loading ?
+              <div className="admin__load">
+                <div class="loader">
                   <div class="inner one"></div>
                   <div class="inner two"></div>
                   <div class="inner three"></div>
-                </div> :
-                  <>
+                </div>
+              </div> :
+              <>
+                <h2 className='admin__caption'>Добавить пост</h2>
+                <form className='admin__post post' onSubmit={e => e.preventDefault()}>
+                  <label className='post__label'>
+                    <button onClick={() => inputFileRef.current.click()} className='post__btn post__btn--input'>Добавить превью</button>
+                    <input hidden ref={inputFileRef} type='file' multiple className='post__input post__input--file' onChange={handleFileUpload} />
+                  </label>
+                  {expansion === 'jpg' || expansion === 'png' ? (
+                    <div className='post__image'>
+                      <img className='post__img' src={link} alt='Img' />
+                    </div>
+                  ) :
+                    <ReactPlayer url={link} width="100%" height="100%" style={{ marginTop: '10px', marginBottom: '10px' }} controls={true} />
+                  }
+                  <label className='post__title'>
+                    Заголовок поста:
+                    <div className='post__input post__input--text'>
+                      <input type='text' placeholder='Заголовок' value={title} onChange={e => setTitle(e.target.value)} />
+                    </div>
+                  </label>
+                  <label className='post__title'>
+                    Текст поста:
+                    <div className='post__input post__input--text'>
+                      <SimpleMDE value={text} onChange={onChange} className='post__editor' options={options} />
+                    </div>
+                  </label>
+                  <div className='post__button'>
                     <button onClick={submitHandler} className='post__btn post__btn--add'>Добавить</button>
                     <button onClick={clearFormHandler} className='post__btn post__btn--cancel'>Отменить</button>
-                  </>
-              }
-            </div>
-          </form >
+                  </div>
+                </form >
+              </>
+          }
         </div>
         <div className='admin__right'>
           <h2 className='admin__caption'>Список постов</h2>
