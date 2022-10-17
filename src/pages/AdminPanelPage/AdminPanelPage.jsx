@@ -130,7 +130,7 @@ const AdminPanelPage = (props) => {
                       <img className='post__img' src={link} alt='Img' />
                     </div>
                   ) :
-                    <ReactPlayer url={link} width="100%" height="100%" style={{ marginTop: '10px', marginBottom: '10px' }} controls={true} />
+                    <ReactPlayer className='aa' url={link} width="100%" height="100%" style={{ marginTop: '10px', marginBottom: '10px' }} controls={true} />
                   }
                   <label className='post__title'>
                     Заголовок поста:
