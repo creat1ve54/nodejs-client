@@ -4,12 +4,13 @@ const CREATE_POST = 'CREATE_POST'
 const GET_POST = 'GET_POST'
 const REMOVE_POST = 'REMOVE_POST'
 const SAVE_POST = 'SAVE_POST'
+const SET_LOADING = 'SET_LOADING'
 
 
 const initialState = {
     posts: [],
     popularPosts: [],
-    // loading: false,
+    loading: false,
 }
 
 
@@ -37,6 +38,11 @@ const postReducer = (state = initialState, action) => {
                 ...state,
                 posts: [...state.posts, action.posts],
             }
+        case SET_LOADING:
+            return {
+                ...state,
+                loading: action.loading,
+            }
         default:
             return state
     }
@@ -56,6 +62,13 @@ export const setSavePost = (data) => {
     return {
         type: SAVE_POST,
         posts: data,
+    }
+}
+
+export const setLoading = (loading) => {
+    return {
+        type: SET_LOADING,
+        loading: loading,
     }
 }
 export const setGetPosts = (data) => {
@@ -78,8 +91,10 @@ export const setRemovePost = (data) => {
 
 export const createPost = (params) => async (dispatch) => {
     try {
+        dispatch(setLoading(true))
         let { data } = await postAPI.create(params)
         dispatch(setCreatePost(data))
+        dispatch(setLoading(false))
     } catch (error) {
         console.log(error)
     }

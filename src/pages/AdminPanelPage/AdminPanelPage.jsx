@@ -15,14 +15,14 @@ import Page from '../../components/Page';
 const AdminPanelPageContainer = (props) => {
   return (
     <>
-      <AdminPanelPage createPost={props.createPost} getAllPosts={props.getAllPosts} posts={props.posts} popularPosts={props.popularPosts} />
+      <AdminPanelPage loading={props.loading} createPost={props.createPost} getAllPosts={props.getAllPosts} posts={props.posts} popularPosts={props.popularPosts} />
     </>
   )
 }
 
 
 const AdminPanelPage = (props) => {
-  const { getAllPosts, posts } = props
+  const { getAllPosts, posts, loading } = props
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
   const [file, setFile] = useState('')
@@ -30,6 +30,7 @@ const AdminPanelPage = (props) => {
   const [expansion, setExpansion] = useState('')
   const inputFileRef = useRef(null)
 
+  console.log(loading)
 
 
   const [page, setPage] = useState(1);
@@ -137,10 +138,10 @@ const AdminPanelPage = (props) => {
               Текст поста:
               <div className='post__input post__input--text'>
                 <SimpleMDE value={text} onChange={onChange} className='post__editor' options={options} />
-                {/* <textarea placeholder='Текст поста' onChange={e => setText(e.target.value)} value={text}></textarea> */}
               </div>
             </label>
             <div className='post__button'>
+              <div>{loading}</div>
               <button onClick={submitHandler} className='post__btn post__btn--add'>Добавить</button>
               <button onClick={clearFormHandler} className='post__btn post__btn--cancel'>Отменить</button>
             </div>
@@ -167,6 +168,7 @@ const mapStateToProps = (state) => {
     posts: state.postPage.posts,
     editorState: state.postPage.editorState,
     popularPosts: state.postPage.popularPosts,
+    loading: state.postPage.loading,
   }
 }
 
