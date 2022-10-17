@@ -118,7 +118,7 @@ const EditPostPage = (props) => {
                                     <img className='post__img' src={`https://nodejs-server-production.up.railway.app/${oldFile}`} alt='Img' />
                                 </div>
                             ) :
-                                <ReactPlayer url={`https://nodejs-server-production.up.railway.app/${oldFile}`} width="100%" height="100%" controls={true} />
+                                <ReactPlayer url={`https://nodejs-server-production.up.railway.app/${oldFile}`} style={{ marginTop: '10px', marginBottom: '10px' }} width="100%" height="100%" controls={true} />
                             }
                         </div>
                     }
