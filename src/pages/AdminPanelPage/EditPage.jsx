@@ -115,10 +115,10 @@ const EditPostPage = (props) => {
                         <div>
                             {(expansion === 'jpg' || expansion === 'png') ? (
                                 <div className='post__image'>
-                                    <img className='post__img' src={`https://nodejs-server-production.up.railway.app/${oldFile}`} alt='Img' />
+                                    <img className='post__img' src={`http://localhost:5002/${oldFile}`} alt='Img' />
                                 </div>
                             ) :
-                                <ReactPlayer url={`https://nodejs-server-production.up.railway.app/${oldFile}`} style={{ marginTop: '10px', marginBottom: '10px' }} width="100%" height="100%" controls={true} />
+                                <ReactPlayer url={`http://localhost:5002/${oldFile}`} style={{ marginTop: '10px', marginBottom: '10px' }} width="100%" height="100%" controls={true} />
                             }
                         </div>
                     }
