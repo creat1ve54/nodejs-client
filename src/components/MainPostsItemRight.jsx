@@ -12,7 +12,7 @@ import remarkGfm from 'remark-gfm'
 
 const MainPostsItemRight = ({ post }) => {
     const [expansion, setExpansion] = useState('')
-
+    
     useEffect(() => {
         setExpansion(post?.fileUrl?.split('.').pop())
 
