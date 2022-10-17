@@ -127,7 +127,7 @@ const EditPostPage = (props) => {
                             <img className='post__img' src={link} alt='Img' />
                         </div>
                     ) :
-                        <ReactPlayer url={link} width="100%" height="100%" controls={true} />
+                        <ReactPlayer url={link} width="100%" height="100%" style={{ marginTop: '10px', marginBottom: '10px' }} controls={true} />
                     }
                     <label className='edit__title'>
                         Заголовок поста:
@@ -139,7 +139,6 @@ const EditPostPage = (props) => {
                         Текст поста:
                         <div className='edit__input--text'>
                             <SimpleMDE value={text} onChange={onChange} className='post__editor' options={options} />
-                            {/* <textarea placeholder='Текст поста' onChange={e => setText(e.target.value)} value={text}></textarea> */}
                         </div>
                     </label>
                     <div className='edit__button'>
