@@ -25,9 +25,9 @@
         object-fit: cover;
     }
 
-    video {
+    &__video {
         width: 100%;
-        height: 100%;
+        height: 300px;
     }
 
     .info__time {
