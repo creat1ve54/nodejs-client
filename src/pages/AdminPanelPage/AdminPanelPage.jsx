@@ -30,8 +30,6 @@ const AdminPanelPage = (props) => {
   const [expansion, setExpansion] = useState('')
   const inputFileRef = useRef(null)
 
-  console.log(loading)
-
 
   const [page, setPage] = useState(1);
   const [limit, setLimit] = useState(10);
@@ -142,8 +140,13 @@ const AdminPanelPage = (props) => {
             </label>
             <div className='post__button'>
               <div>{loading}</div>
-              <button onClick={submitHandler} className='post__btn post__btn--add'>Добавить</button>
-              <button onClick={clearFormHandler} className='post__btn post__btn--cancel'>Отменить</button>
+              {
+                loading ? <div>Подождите, идет загрузка</div> :
+                  <>
+                    <button onClick={submitHandler} className='post__btn post__btn--add'>Добавить</button>
+                    <button onClick={clearFormHandler} className='post__btn post__btn--cancel'>Отменить</button>
+                  </>
+              }
             </div>
           </form >
         </div>
