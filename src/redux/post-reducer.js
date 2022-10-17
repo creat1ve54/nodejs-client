@@ -11,6 +11,7 @@ const initialState = {
     posts: [],
     popularPosts: [],
     loading: false,
+    status: null,
 }
 
 
@@ -42,6 +43,7 @@ const postReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: action.loading,
+                status: action.status,
             }
         default:
             return state
@@ -65,10 +67,11 @@ export const setSavePost = (data) => {
     }
 }
 
-export const setLoading = (loading) => {
+export const setLoading = (loading, status) => {
     return {
         type: SET_LOADING,
         loading: loading,
+        status: status,
     }
 }
 export const setGetPosts = (data) => {
@@ -93,8 +96,9 @@ export const createPost = (params) => async (dispatch) => {
     try {
         dispatch(setLoading(true))
         let { data } = await postAPI.create(params)
+        let status = data.message
         dispatch(setCreatePost(data))
-        dispatch(setLoading(false))
+        dispatch(setLoading(false, status))
     } catch (error) {
         console.log(error)
     }

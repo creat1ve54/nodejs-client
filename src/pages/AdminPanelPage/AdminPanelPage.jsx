@@ -15,14 +15,14 @@ import Page from '../../components/Page';
 const AdminPanelPageContainer = (props) => {
   return (
     <>
-      <AdminPanelPage loading={props.loading} createPost={props.createPost} getAllPosts={props.getAllPosts} posts={props.posts} popularPosts={props.popularPosts} />
+      <AdminPanelPage status={props.status} loading={props.loading} createPost={props.createPost} getAllPosts={props.getAllPosts} posts={props.posts} popularPosts={props.popularPosts} />
     </>
   )
 }
 
 
 const AdminPanelPage = (props) => {
-  const { getAllPosts, posts, loading } = props
+  const { getAllPosts, posts, loading, status } = props
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
   const [file, setFile] = useState('')
@@ -97,6 +97,8 @@ const AdminPanelPage = (props) => {
       }
     }
   }, []);
+
+  console.log(status)
 
 
   useEffect(() => {
@@ -175,6 +177,7 @@ const mapStateToProps = (state) => {
     editorState: state.postPage.editorState,
     popularPosts: state.postPage.popularPosts,
     loading: state.postPage.loading,
+    status: state.postPage.status,
   }
 }
 
