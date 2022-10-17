@@ -45,9 +45,7 @@ const MainPostsItemRight = ({ post }) => {
                                 <img className='MainPostsItemRight__img' src={`https://nodejs-server-production.up.railway.app/${post?.fileUrl}`} alt='Img' />
                             </div>
                         ) :
-                            <div className="post__video">
-                                <ReactPlayer className='a' url={`https://nodejs-server-production.up.railway.app/${post?.fileUrl}`} controls={true} />
-                            </div>
+                                <ReactPlayer className='MainPostsItemRight__video' url={`https://nodejs-server-production.up.railway.app/${post?.fileUrl}`} controls={true} />
                         }
                     </div>
                 }
