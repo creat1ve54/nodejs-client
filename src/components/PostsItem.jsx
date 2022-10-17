@@ -19,7 +19,7 @@ const PostsItem = ({ post }) => {
 
     if (!post) {
         return (
-            <div className='postsItem__text--null'>
+            <div className='postsItem__text postsItem__text--null'>
                 Постов не существует.
             </div>
         )
@@ -48,7 +48,6 @@ const PostsItem = ({ post }) => {
                     <div className='info__time'>{time}</div>
                 </div>
                 <div className='postsItem__title'>{post.title}</div>
-                <p className='postsItem__text'>{post.text}</p>
                 <div className='postsItem__btn'>
                     <button className='postsItem__btn--like'><AiFillEye /><span>{post.views}</span></button>
                 </div>

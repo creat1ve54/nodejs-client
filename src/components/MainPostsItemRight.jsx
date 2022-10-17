@@ -55,8 +55,6 @@ const MainPostsItemRight = ({ post }) => {
                         <div className='info__time'>{time}</div>
                     </div>
                     <div className='MainPostsItemRight__title'>{post.title}</div>
-                    {/* <p className='MainPostsItemRight__text'>{post.text}</p> */}
-                    <ReactMarkdown className='MainPostsItemRight__text' children={post.text} remarkPlugins={[remarkGfm]} />
                 </div>
             </div>
         </button >

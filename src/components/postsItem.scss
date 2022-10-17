@@ -15,13 +15,6 @@ button {
     }
 
     &__text {
-        color: white;
-        opacity: 0.5;
-        margin-bottom: 10px;
-        overflow-wrap: anywhere;
-        height: 24px;
-        overflow: hidden;
-
         &--null {
             text-align: center;
             color: darkgrey;

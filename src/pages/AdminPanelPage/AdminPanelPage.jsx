@@ -125,7 +125,7 @@ const AdminPanelPage = (props) => {
                 <img className='post__img' src={link} alt='Img' />
               </div>
             ) :
-              <ReactPlayer url={link} width="100%" height="100%" controls={true} />
+              <ReactPlayer className='post__video' url={link} controls={true} />
             }
             <label className='post__title'>
               Заголовок поста:

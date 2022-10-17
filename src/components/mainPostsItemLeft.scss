@@ -34,21 +34,11 @@
     &__title {
         display: flex;
         flex-wrap: wrap;
-        font-size: 18px;
+        font-size: 14px;
         color: black;
         font-weight: 600;
         text-transform: uppercase;
         margin-bottom: 5px;
-    }
-
-    &__text {
-        font-size: 14px;
-        color: black;
-        opacity: 0.5;
-        margin-bottom: 10px;
-        overflow-wrap: anywhere;
-        height: 28px;
-        overflow: hidden;
     }
 
     &__container {
