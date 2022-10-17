@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const instance = axios.create({
-    baseURL: 'http://localhost:5002/api',
+    baseURL: 'http://62.113.100.165:5002/api',
 })
 
 export const postAPI = {
