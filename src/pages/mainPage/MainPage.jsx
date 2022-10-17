@@ -6,7 +6,6 @@ import { getAllPosts } from '../../redux/post-reducer'
 import MainPostsItemLeft from '../../components/MainPostsItemLeft'
 import MainPostsItemRight from '../../components/MainPostsItemRight'
 import Page from '../../components/Page'
-import { Link, useNavigate, useParams } from 'react-router-dom'
 
 
 const MainPageContainer = (props) => {
@@ -22,7 +21,7 @@ const MainPage = (props) => {
     const [limit, setLimit] = useState(10);
     const [totalUserCount, setTotalUserCount] = useState(0);
 
-    const navigate = useNavigate()
+
 
 
     const lastIndex = page * limit
@@ -35,9 +34,6 @@ const MainPage = (props) => {
     const paginate = pageNumber => setPage(pageNumber)
 
 
-    const onLink = (post) => {
-        navigate(`/post/${post.id}`)
-    }
 
 
     useEffect(() => {
@@ -60,9 +56,8 @@ const MainPage = (props) => {
                 <div className="main__right">
                     {
                         currentPage?.map((post, idx) =>
-                            <button onClick={onLink} key={idx} >
-                                <MainPostsItemRight post={post} />
-                            </button>)
+                            <MainPostsItemRight key={idx} post={post} />
+                        )
                     }
                     {pageCount !== 1 &&
                         <Page pageCount={pageCount} paginate={paginate} page={page} />

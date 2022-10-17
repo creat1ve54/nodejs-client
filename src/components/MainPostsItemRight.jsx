@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ReactPlayer from 'react-player'
 import moment from 'moment'
 import 'moment/locale/ru'
@@ -12,11 +12,17 @@ import remarkGfm from 'remark-gfm'
 
 const MainPostsItemRight = ({ post }) => {
     const [expansion, setExpansion] = useState('')
-    
+
     useEffect(() => {
         setExpansion(post?.fileUrl?.split('.').pop())
 
     }, [post?.fileUrl])
+
+    const navigate = useNavigate()
+
+    const onLink = () => {
+        navigate(`/post/${post.id}`)
+    }
 
     let data = moment(post.createdAt).format('LL')
     let time = moment(post.createdAt).format('LT');
@@ -30,7 +36,7 @@ const MainPostsItemRight = ({ post }) => {
     }
     return (
         <div className='MainPostsItemRight'>
-            <div className='MainPostsItemRight__link'>
+            <button onClick={onLink} className='MainPostsItemRight__link'>
                 {
                     post.fileUrl && <div className={post.fileUrl ? 'MainPostsItemRight__image--visible' : 'MainPostsItemRight__image--invisible'
                     }>
@@ -52,7 +58,7 @@ const MainPostsItemRight = ({ post }) => {
                     {/* <p className='MainPostsItemRight__text'>{post.text}</p> */}
                     <ReactMarkdown className='publication__edit' children={post.text} remarkPlugins={[remarkGfm]} />
                 </div>
-            </div>
+            </button>
         </div >
     )
 }
