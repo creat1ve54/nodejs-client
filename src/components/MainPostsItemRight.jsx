@@ -35,8 +35,8 @@ const MainPostsItemRight = ({ post }) => {
         )
     }
     return (
-        <div className='MainPostsItemRight'>
-            <button onClick={onLink} className='MainPostsItemRight__link'>
+        <button onClick={onLink} className='MainPostsItemRight'>
+            <div className='MainPostsItemRight__link'>
                 {
                     post.fileUrl && <div className={post.fileUrl ? 'MainPostsItemRight__image--visible' : 'MainPostsItemRight__image--invisible'
                     }>
@@ -56,10 +56,10 @@ const MainPostsItemRight = ({ post }) => {
                     </div>
                     <div className='MainPostsItemRight__title'>{post.title}</div>
                     {/* <p className='MainPostsItemRight__text'>{post.text}</p> */}
-                    <ReactMarkdown className='publication__edit' children={post.text} remarkPlugins={[remarkGfm]} />
+                    <ReactMarkdown className='MainPostsItemRight__text' children={post.text} remarkPlugins={[remarkGfm]} />
                 </div>
-            </button>
-        </div >
+            </div>
+        </button >
     )
 }
 
