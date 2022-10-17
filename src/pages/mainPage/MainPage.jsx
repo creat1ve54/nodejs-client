@@ -60,7 +60,7 @@ const MainPage = (props) => {
                 <div className="main__right">
                     {
                         currentPage?.map((post, idx) =>
-                            <button onClick={onLink(post)} key={idx} >
+                            <button onClick={onLink} key={idx} >
                                 <MainPostsItemRight post={post} />
                             </button>)
                     }
@@ -68,7 +68,6 @@ const MainPage = (props) => {
                         <Page pageCount={pageCount} paginate={paginate} page={page} />
                     }
                 </div>
-
             </div>
         </div>
     )
