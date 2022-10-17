@@ -98,9 +98,6 @@ const AdminPanelPage = (props) => {
     }
   }, []);
 
-  console.log(status)
-
-
   useEffect(() => {
     getAllPosts()
     setTotalUserCount(posts?.length)

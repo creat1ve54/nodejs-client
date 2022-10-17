@@ -11,7 +11,7 @@ const initialState = {
     posts: [],
     popularPosts: [],
     loading: false,
-    status: null,
+    // status: null,
 }
 
 
@@ -43,7 +43,7 @@ const postReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: action.loading,
-                status: action.status,
+                // status: action.status,
             }
         default:
             return state
@@ -71,7 +71,7 @@ export const setLoading = (loading, status) => {
     return {
         type: SET_LOADING,
         loading: loading,
-        status: status,
+        // status: status,
     }
 }
 export const setGetPosts = (data) => {
