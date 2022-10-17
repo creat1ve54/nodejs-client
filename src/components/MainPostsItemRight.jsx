@@ -5,13 +5,16 @@ import moment from 'moment'
 import 'moment/locale/ru'
 import './mainPostsItemRight.scss'
 
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
+
 
 const MainPostsItemRight = ({ post }) => {
     const [expansion, setExpansion] = useState('')
 
     useEffect(() => {
         setExpansion(post?.fileUrl?.split('.').pop())
-        console.log(post?.fileUrl)
 
     }, [post?.fileUrl])
 
@@ -46,7 +49,8 @@ const MainPostsItemRight = ({ post }) => {
                         <div className='info__time'>{time}</div>
                     </div>
                     <div className='MainPostsItemRight__title'>{post.title}</div>
-                    <p className='MainPostsItemRight__text'>{post.text}</p>
+                    {/* <p className='MainPostsItemRight__text'>{post.text}</p> */}
+                    <ReactMarkdown className='publication__edit' children={post.text} remarkPlugins={[remarkGfm]} />
                 </div>
             </div>
         </div >

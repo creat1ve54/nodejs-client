@@ -55,9 +55,9 @@ const AdminPanelPage = (props) => {
       data.append('file', file)
       data.append('expansion', expansion)
       props.createPost(data)
-      setTimeout(function () {
-        window.location.reload();
-      }, 1000)
+      // setTimeout(function () {
+      //   window.location.reload();
+      // }, 1000)
     } catch (error) {
       console.log(error)
     }
