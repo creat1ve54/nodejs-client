@@ -54,9 +54,6 @@ const AdminPanelPage = (props) => {
       data.append('file', file)
       data.append('expansion', expansion)
       props.createPost(data)
-      // setTimeout(function () {
-      //   window.location.reload();
-      // }, 1000)
     } catch (error) {
       console.log(error)
     }
@@ -141,7 +138,11 @@ const AdminPanelPage = (props) => {
             <div className='post__button'>
               <div>{loading}</div>
               {
-                loading ? <div>Подождите, идет загрузка</div> :
+                loading ? <div class="loader">
+                  <div class="inner one"></div>
+                  <div class="inner two"></div>
+                  <div class="inner three"></div>
+                </div> :
                   <>
                     <button onClick={submitHandler} className='post__btn post__btn--add'>Добавить</button>
                     <button onClick={clearFormHandler} className='post__btn post__btn--cancel'>Отменить</button>
