@@ -1,0 +1,38 @@
+.footer {
+    padding: 20px 0px;
+    background-color: #d4d3d3;
+    height: 173px;
+
+    &__title {
+        margin: 0;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    &__list {
+        padding-left: 20px;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__link {
+        color: black;
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .footer {
+        &__title {
+            font-size: 16px;
+        }
+
+        &__link {
+            font-size: 14px;
+        }
+    }
+}

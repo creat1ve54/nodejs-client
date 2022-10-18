@@ -7,6 +7,7 @@ import MainPostsItemLeft from '../../components/MainPostsItemLeft'
 import MainPostsItemRight from '../../components/MainPostsItemRight'
 import Page from '../../components/Page'
 import { Link, useParams } from 'react-router-dom'
+import Footer from '../../components/Footer'
 
 
 const MainPageContainer = (props) => {
@@ -66,6 +67,7 @@ const MainPage = (props) => {
                 </div>
 
             </div>
+            <Footer />
         </div>
     )
 }
