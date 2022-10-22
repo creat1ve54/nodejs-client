@@ -29,8 +29,6 @@ const EditPostPage = (props) => {
     const inputFileRef = useRef(null)
 
 
-
-
     const params = useParams();
 
     const id = params.id
@@ -115,7 +113,7 @@ const EditPostPage = (props) => {
                         <div>
                             {(expansion === 'jpg' || expansion === 'png') ? (
                                 <div className='post__image'>
-                                    <img className='post__img' src={`http://62.113.100.165:5002/${oldFile}`} alt='Img' />
+                                    <img className='post__img' src={`http://localhost:5002/${oldFile}`} alt='Img' />
                                 </div>
                             ) :
                                 <ReactPlayer url={`/${oldFile}`} style={{ marginTop: '10px', marginBottom: '10px' }} width="100%" height="100%" controls={true} />
