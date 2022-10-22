@@ -47,10 +47,10 @@ const PostItem = () => {
                     <div className='publication__file'>
                         {expansion === 'jpg' || expansion === 'png' ? (
                             <div className='postItem__image'>
-                                <img className='postItem__img' src={`http://localhost:5002/${file}`} alt='Img' />
+                                <img className='postItem__img' src={`http://79.133.182.103:5002/${file}`} alt='Img' />
                             </div>
                         ) :
-                            <ReactPlayer url={`http://localhost:5002/${file}`} width="100%" height="100%" controls={true} />
+                            <ReactPlayer url={`http://79.133.182.103t:5002/${file}`} width="100%" height="100%" controls={true} />
                         }
                     </div>
                 }
